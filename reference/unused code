@@ -1,0 +1,73 @@
+
+
+// LESS
+
+// display the main photo carousel - unused with Flickr embed
+#photo_showcase {
+  background: black;
+  padding-top: 60px;
+}
+
+
+
+.feature {
+  .clearfix();
+
+  .feature_main {
+    padding: 10px 0;
+  }
+}
+
+img.feature_thumbnail {
+  float: left;
+  padding: 0 10px 0 0;
+}
+
+// js
+
+
+//Unused yet
+
+$('#bookModal').modal({
+  show: false,
+  keyboard : true,
+  backdrop : true
+});
+
+$('#scroller').scrollspy();
+
+$('#popover').popover({
+  animation: true,
+  placement: 'top'
+});
+
+$('.hidetrigger').click(function() {
+  $('.hideable').toggle('fast', function() {
+    // Animation complete.
+  });
+});
+
+      <!--
+      <div class="row-fluid">
+
+        <div class="hero-unit" id="main-hero-unit">
+          <div id="headshot_box">
+            <img src="img/jono_hey.png" id="headshot" class="tooltip_above" data-original-title="Hi !"></img>
+            <ul class="social_icons">
+              <li><a href="http://www.twitter.com/palojono"><i class="icon-twitter icon-large"></i></a></li>
+              <li><a href="http://uk.linkedin.com/in/jonohey"><i class="icon-linkedin icon-large"></i></a></li>
+            </ul>
+          </div><!-- headshot_box 
+
+          <h1>Hi. I'm Jono.</h1>
+          <p>I'm a designer of all sorts living and working in London.</p>
+          <p>I work on user experience at Nutmeg and like doing lots of things as you'll see below</p>
+
+        </div><!-- /hero-unit 
+      </div><!-- /row-fluid 
+    -->
+
+
+
+
+

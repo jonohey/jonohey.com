@@ -1,0 +1,47 @@
+*divider* a brother
+*divider* a <a href="research.php">researcher</a>
+*divider* a <a href="originals.php">composer</a>
+*divider* a remixer
+*divider* a <a href="http://www.flickr.com/photos/palojono/2657969844/">swimmer</a>
+*divider* a computer geek
+*divider* a <a href="http://www.flickr.com/photos/palojono/3285044853/">skier</a>
+*divider* a gamer
+*divider* a designer
+*divider* a <a href="dev/tagv8/index.html">game designer</a>
+*divider* a football player
+*divider* an <a href="http://groups.google.com/group/sfuwh">underwater hockey player</a>
+*divider* a <a href="http://www.tfl.gov.uk/">commuter</a>
+*divider* a <a href="http://www.flickr.com/photos/palojono/2898152750/">hiker</a>
+*divider* a friend
+*divider* a <a href="http://www.blurb.com/bookstore/invited/384604/934da1c783c43f0c1525a62542ed0950">chef</a>
+*divider* an <a href="http://www.flickr.com/photos/palojono/sets/72157601663815539/">adventurer</a>
+*divider* a <a href="http://www.palojono.com/photos">photographer</a>
+*divider* an uncle
+*divider* a <a href="http://www.flickr.com/photos/palojono/2532471209/">son</a>
+*divider* a storyteller
+*divider* a cousin
+*divider* a facilitator
+*divider* a <a href="research.php">scholar</a>
+*divider* a coffee drinker
+*divider* a <a href="http://palojono.blogspot.com/">writer</a>
+*divider* a <a href="http://palojono.blogspot.com">blogger</a>
+*divider* a game enthusiast
+*divider* a tourist
+*divider* a guest speaker
+*divider* a consultant
+*divider* a <a href="http://best.me.berkeley.edu/~jhey03/img/photo_albums/photo_index.htm">traveler</a>
+*divider* a <a href="http://best.me.berkeley.edu/~jhey03/img/photo_albums/snowdon_04/Maria%20with%20ring.JPG">husband</a>
+*divider* a mentor
+*divider* a procrastinator
+*divider* a <a href="http://bid.berkeley.edu/people/">student</a>
+*divider* a joker
+*divider* a programmer
+*divider* an organiser
+*divider* a French speaker
+*divider* a <a href="piano.php">piano player</a>
+*divider* a <a href="piano_all_tracks.php">musician</a>
+*divider* a <a href="http://www.flickr.com/photos/palojono/3090912416/">jogger</a>
+*divider* a teacher
+*divider* an ethnographer
+*divider* a slacker
+*divider* a <a href="http://www.saintsfc.co.uk/">Saints</a> fan
