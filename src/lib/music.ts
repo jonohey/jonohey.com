@@ -16,6 +16,10 @@ export const streamingLinks = [
     href: "https://music.amazon.co.uk/artists/B09R4DKBCK/jono-hey",
   },
   {
+    name: "Bandcamp",
+    href: "https://jonohey.bandcamp.com/",
+  },
+  {
     name: "YouTube",
     href: "https://www.youtube.com/@jonoheymusic",
   },
