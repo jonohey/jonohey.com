@@ -55,9 +55,8 @@ export default function MusicPage() {
       <JsonLd data={musicJsonLd} />
       <section className="grid gap-10 pt-6 md:grid-cols-[15rem_1fr] md:gap-16 md:pt-12">
         <div className="self-center md:order-2">
-          <Eyebrow>Composer · London</Eyebrow>
-          <h1 className="mt-3 font-serif text-5xl tracking-tight sm:text-6xl">
-            Jono Hey Music
+          <h1 className="font-serif text-5xl tracking-tight sm:text-6xl">
+            Music
           </h1>
           <p className="mt-5 text-lg leading-relaxed text-muted">
             Melodic, atmospheric music rooted in the piano, somewhere between
