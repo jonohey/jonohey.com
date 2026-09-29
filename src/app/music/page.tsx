@@ -53,7 +53,7 @@ export default function MusicPage() {
   return (
     <div className="mx-auto max-w-5xl px-5 pb-16 sm:px-8">
       <JsonLd data={musicJsonLd} />
-      <section className="grid gap-10 pt-6 md:grid-cols-[2fr_3fr] md:gap-16 md:pt-12">
+      <section className="grid gap-10 pt-6 md:grid-cols-[15rem_1fr] md:gap-16 md:pt-12">
         <div className="self-center md:order-2">
           <Eyebrow>Composer · London</Eyebrow>
           <h1 className="mt-3 font-serif text-5xl tracking-tight sm:text-6xl">
@@ -84,8 +84,9 @@ export default function MusicPage() {
           alt="Black and white portrait of Jono Hey outdoors"
           priority
           placeholder="blur"
-          sizes="(min-width: 1024px) 384px, (min-width: 768px) 38vw, 100vw"
-          className="aspect-square w-full rounded-2xl object-cover md:order-1"
+          quality={90}
+          sizes="(min-width: 768px) 240px, 176px"
+          className="aspect-square w-44 self-center rounded-2xl object-cover md:order-1 md:w-full"
         />
       </section>
 
