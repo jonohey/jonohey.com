@@ -73,15 +73,9 @@ export default function MusicPage() {
               <li key={link.name}>
                 <a
                   href={link.href}
-                  className="group flex h-full min-h-12 w-full items-center justify-between gap-2 rounded-xl border border-edge bg-panel px-3.5 py-3 leading-snug font-medium text-paper transition-colors hover:border-accent hover:text-accent"
+                  className="flex h-full min-h-12 w-full items-center rounded-xl border border-edge bg-panel px-4 py-3 leading-snug font-medium text-paper transition-colors hover:border-accent hover:text-accent"
                 >
                   {link.name}
-                  <span
-                    aria-hidden="true"
-                    className="text-sm text-muted group-hover:text-accent"
-                  >
-                    ↗
-                  </span>
                 </a>
               </li>
             ))}
