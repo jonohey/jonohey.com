@@ -42,7 +42,7 @@ const sections = [
 export default function Home() {
   return (
     <div className="mx-auto max-w-5xl px-5 pt-6 pb-16 sm:px-8 md:pt-12">
-      <section className="grid gap-12 md:grid-cols-[2fr_3fr] md:items-center md:gap-16">
+      <section className="grid gap-12 md:grid-cols-[15rem_1fr] md:items-center md:gap-16">
         <div className="md:order-2">
           <h1 className="font-serif text-5xl tracking-tight sm:text-6xl">
             Jono Hey
@@ -89,8 +89,9 @@ export default function Home() {
           alt="Jono Hey smiling with arms folded, leaning against a white wall"
           priority
           placeholder="blur"
-          sizes="(min-width: 1024px) 384px, (min-width: 768px) 38vw, 100vw"
-          className="aspect-[4/5] w-full rounded-2xl object-cover object-top md:order-1"
+          quality={90}
+          sizes="(min-width: 768px) 240px, 176px"
+          className="aspect-[4/5] w-44 rounded-2xl object-cover object-top md:order-1 md:w-full"
         />
       </section>
 

@@ -4,7 +4,8 @@ const nextConfig: NextConfig = {
   images: {
     // Serve AVIF where supported (smallest), WebP otherwise.
     formats: ["image/avif", "image/webp"],
-    qualities: [75],
+    // Portraits use 90 so faces stay crisp.
+    qualities: [75, 90],
     // Images are statically imported with hashed URLs, so cache them for a year.
     minimumCacheTTL: 31536000,
   },
