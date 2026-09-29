@@ -1,4 +1,4 @@
-export const siteUrl = "https://www.jonohey.com";
+export const siteUrl = "https://jonohey.com";
 
 export const email = "jono.hey@gmail.com";
 
