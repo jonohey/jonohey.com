@@ -14,7 +14,7 @@ import portrait from "../../../public/images/jono-hey-composer-black-and-white.j
 import sheetMusic from "../../../public/images/let-go-reprise-sheet-music.jpg";
 
 const description =
-  "Melodic, atmospheric piano music by London-based composer Jono Hey. Listen on Spotify, Apple Music, YouTube Music and Amazon Music, or buy the sheet music and play it yourself.";
+  "Melodic, atmospheric piano music by London-based composer Jono Hey. Listen on Spotify, Apple Music, YouTube Music, Amazon Music and Bandcamp, or buy the sheet music and play it yourself.";
 
 export const metadata: Metadata = {
   title: { absolute: "Jono Hey Music — Piano Music and Sheet Music" },
@@ -65,15 +65,23 @@ export default function MusicPage() {
             that&apos;s melodic, atmospheric, and somewhere between classical
             and modern.
           </p>
-          <h2 className="mt-8 text-sm font-medium text-muted">Listen on</h2>
-          <ul className="mt-3 flex flex-wrap gap-3">
+          <h2 className="mt-10 text-sm tracking-[0.2em] text-accent uppercase">
+            Listen on
+          </h2>
+          <ul className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-3">
             {streamingLinks.map((link) => (
               <li key={link.name}>
                 <a
                   href={link.href}
-                  className="inline-flex rounded-full border border-edge px-4 py-2 text-sm transition-colors hover:border-paper"
+                  className="group flex h-full min-h-12 w-full items-center justify-between gap-2 rounded-xl border border-edge bg-panel px-3.5 py-3 leading-snug font-medium text-paper transition-colors hover:border-accent hover:text-accent"
                 >
                   {link.name}
+                  <span
+                    aria-hidden="true"
+                    className="text-sm text-muted group-hover:text-accent"
+                  >
+                    ↗
+                  </span>
                 </a>
               </li>
             ))}

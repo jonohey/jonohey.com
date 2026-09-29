@@ -7,8 +7,8 @@
   --color-line: #26262a;
   /* Borders and underlines on interactive elements: 3.7:1 on ink (WCAG 1.4.11). */
   --color-edge: #6b6b73;
-  /* Secondary text: 9.5:1 on ink, 8.9:1 on panel (WCAG AAA). */
-  --color-muted: #b4b4bb;
+  /* Body and secondary text: 13.3:1 on ink, 12.4:1 on panel (WCAG AAA). */
+  --color-muted: #d4d4d9;
   --color-paper: #ededee;
   --color-accent: #e8c27a;
   --font-sans: var(--font-inter);
