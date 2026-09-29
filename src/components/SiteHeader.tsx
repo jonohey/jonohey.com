@@ -3,7 +3,6 @@ import { NavLink } from "@/components/NavLink";
 
 const nav = [
   { href: "/music", label: "Music" },
-  { href: "/research", label: "Research" },
   { href: "/contact", label: "Contact" },
 ];
 
