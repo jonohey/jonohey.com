@@ -31,7 +31,7 @@ const thesisJsonLd = {
 export const metadata: Metadata = {
   title: "Research",
   description:
-    "Effective Framing in Design — Jono Hey's PhD thesis from UC Berkeley on how multidisciplinary design teams align on what people really need.",
+    "Effective Framing in Design — Jono Hey's 2008 PhD thesis from UC Berkeley on how multidisciplinary design teams align on what people really need.",
   alternates: { canonical: "/research" },
 };
 
@@ -39,7 +39,7 @@ export default function ResearchPage() {
   return (
     <article className="mx-auto max-w-2xl px-5 pt-6 pb-16 sm:px-8 md:pt-12">
       <JsonLd data={thesisJsonLd} />
-      <Eyebrow>Research</Eyebrow>
+      <Eyebrow>PhD thesis · 2008</Eyebrow>
       <h1 className="mt-3 font-serif text-4xl tracking-tight sm:text-5xl">
         Effective Framing in Design
       </h1>
@@ -59,7 +59,8 @@ export default function ResearchPage() {
         <div className="space-y-4 leading-relaxed text-muted">
           <p>
             I studied and taught product design at the University of
-            California, Berkeley in the San Francisco Bay Area.
+            California, Berkeley in the San Francisco Bay Area, finishing my
+            PhD in 2008.
           </p>
           <p>
             My thesis was about effective framing in design. The central
