@@ -77,6 +77,12 @@ export default function Home() {
               </li>
             ))}
           </ul>
+          <a
+            href={links.linkedin}
+            className="mt-4 inline-block font-medium underline decoration-line underline-offset-4 transition-colors hover:text-accent"
+          >
+            LinkedIn
+          </a>
         </div>
         <Image
           src={portrait}
