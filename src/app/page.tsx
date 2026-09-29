@@ -30,7 +30,7 @@ const sections = [
   {
     href: "/research",
     title: "Research",
-    body: "My PhD thesis, Effective Framing in Design, from UC Berkeley.",
+    body: "My 2008 PhD thesis, Effective Framing in Design, from UC Berkeley.",
   },
   {
     href: "/contact",
