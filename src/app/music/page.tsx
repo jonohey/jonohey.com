@@ -60,10 +60,8 @@ export default function MusicPage() {
             Jono Hey Music
           </h1>
           <p className="mt-5 text-lg leading-relaxed text-muted">
-            I started making music in my teens with a 4-track tape machine and a
-            Casio keyboard, and over the years I&apos;ve found a style
-            that&apos;s melodic, atmospheric, and somewhere between classical
-            and modern.
+            Melodic, atmospheric music rooted in the piano, somewhere between
+            classical and modern.
           </p>
           <h2 className="mt-10 text-sm tracking-[0.2em] text-accent uppercase">
             Listen on
