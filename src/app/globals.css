@@ -1,0 +1,53 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-ink: #0b0b0c;
+  --color-panel: #151517;
+  /* Decorative dividers only. */
+  --color-line: #26262a;
+  /* Borders and underlines on interactive elements: 3.7:1 on ink (WCAG 1.4.11). */
+  --color-edge: #6b6b73;
+  /* Secondary text: 9.5:1 on ink, 8.9:1 on panel (WCAG AAA). */
+  --color-muted: #b4b4bb;
+  --color-paper: #ededee;
+  --color-accent: #e8c27a;
+  --font-sans: var(--font-inter);
+  --font-serif: var(--font-newsreader);
+}
+
+html {
+  color-scheme: dark;
+}
+
+body {
+  background: var(--color-ink);
+  color: var(--color-paper);
+}
+
+.book3d-body {
+  transform-style: preserve-3d;
+  transform: rotateY(36deg);
+  transition: transform 0.6s ease;
+}
+
+.book3d:hover .book3d-body,
+.book3d:focus-visible .book3d-body {
+  transform: rotateY(20deg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .book3d-body {
+    transition: none;
+  }
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+::selection {
+  background: var(--color-accent);
+  color: var(--color-ink);
+}
