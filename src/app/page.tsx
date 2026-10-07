@@ -28,11 +28,6 @@ const sections = [
     body: "Melodic, atmospheric piano and more. Stream it or play it yourself.",
   },
   {
-    href: "/research",
-    title: "Research",
-    body: "My 2008 PhD thesis, Effective Framing in Design, from UC Berkeley.",
-  },
-  {
     href: "/contact",
     title: "Contact",
     body: "Licensing, sheet music, or just to say hello.",
@@ -139,6 +134,18 @@ export default function Home() {
           </a>
         </div>
       </section>
+
+      <p className="mt-20 border-t border-line pt-6 text-sm text-muted">
+        I have a PhD from the University of California at Berkeley. Research and
+        thesis:{" "}
+        <Link
+          href="/research"
+          className="underline decoration-line underline-offset-4 transition-colors hover:text-accent"
+        >
+          Effective Framing in Design
+        </Link>
+        .
+      </p>
     </div>
   );
 }

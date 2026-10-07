@@ -4,8 +4,6 @@ import { links } from "@/lib/site";
 const footerLinks = [
   { href: "/", label: "Home" },
   { href: "/music", label: "Music" },
-  { href: "/research", label: "Research" },
-  { href: "/bibliography", label: "Bibliography" },
   { href: "/contact", label: "Contact" },
   { href: links.sketchplanations, label: "Sketchplanations" },
   { href: links.linkedin, label: "LinkedIn" },
