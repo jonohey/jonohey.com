@@ -21,6 +21,7 @@ export const metadata: Metadata = {
   description,
   alternates: { canonical: "/music" },
   openGraph: { title: "Jono Hey Music", description, url: "/music" },
+  twitter: { card: "summary" },
 };
 
 const musicJsonLd = {
