@@ -68,7 +68,11 @@ export function ReleaseGrid({ items }: { items: ReleaseWithCover[] }) {
 
   useEffect(() => {
     const el = dialog.current;
-    if (selected && el && !el.open) el.showModal();
+    if (!selected || !el || el.open) return;
+    el.showModal();
+    // showModal() focuses the first control (the Prints link), which draws a
+    // focus ring on tap. Focus the dialog itself; Tab still reaches the links.
+    el.focus();
   }, [selected]);
 
   return (
@@ -113,12 +117,13 @@ export function ReleaseGrid({ items }: { items: ReleaseWithCover[] }) {
       </ul>
       <dialog
         ref={dialog}
+        tabIndex={-1}
         aria-label={selected ? `${selected.release.title} cover artwork` : undefined}
         onClose={() => setSelected(null)}
         onClick={(e) => {
           if (!(e.target as HTMLElement).closest("img, a")) e.currentTarget.close();
         }}
-        className="fixed inset-0 m-0 h-dvh max-h-none w-dvw max-w-none cursor-zoom-out bg-ink p-0 text-paper backdrop:bg-transparent"
+        className="fixed inset-0 m-0 h-dvh max-h-none w-dvw max-w-none cursor-zoom-out bg-ink p-0 outline-none! text-paper backdrop:bg-transparent"
       >
         {selected && (
           <div className="flex h-full flex-col items-center justify-center gap-4 p-4 sm:p-8">
