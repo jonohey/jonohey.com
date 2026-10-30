@@ -3,13 +3,14 @@ type Props = {
   title: string;
   kind?: "album" | "playlist";
   height?: number;
+  highlight?: boolean;
 };
 
-export function SpotifyEmbed({ id, title, kind = "album", height = 352 }: Props) {
+export function SpotifyEmbed({ id, title, kind = "album", height = 352, highlight = false }: Props) {
   return (
     <iframe
       title={`${title} on Spotify`}
-      src={`https://open.spotify.com/embed/${kind}/${id}?utm_source=generator&theme=0`}
+      src={`https://open.spotify.com/embed/${kind}/${id}?utm_source=generator${highlight ? "" : "&theme=0"}`}
       width="100%"
       height={height}
       style={{ height }}
