@@ -1,0 +1,87 @@
+# Runs Lighthouse (which includes axe-core's accessibility audits) against a
+# production build of the site on every pull request. Thresholds live in
+# lighthouserc.json.
+name: Lighthouse
+
+on:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  lighthouse:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+
+      - run: pnpm install --frozen-lockfile
+
+      - run: pnpm build
+
+      # Start the server ourselves and request every page once so Lighthouse
+      # measures a warm server, not the cold first hit.
+      - name: Start and warm up the server
+        run: |
+          nohup pnpm start > server.log 2>&1 &
+          for i in $(seq 1 60); do
+            curl -fs http://localhost:3000/ > /dev/null && break
+            sleep 1
+          done
+          for path in / /music /research /bibliography /contact; do
+            curl -fs "http://localhost:3000$path" > /dev/null
+          done
+
+      # Throwaway run, discarded: the first Lighthouse run in a job is slow
+      # (cold Chrome on a busy runner) and would otherwise hit the homepage.
+      - name: Warm up Lighthouse
+        uses: treosh/lighthouse-ci-action@v12
+        with:
+          urls: http://localhost:3000/
+          runs: 1
+
+      # One run per page is usually enough. Scores are noisy on shared
+      # runners, so pages that fail are retried with more runs (the best run counts).
+      - uses: treosh/lighthouse-ci-action@v12
+        id: single-run
+        continue-on-error: true
+        with:
+          configPath: ./lighthouserc.json
+          runs: 1
+          uploadArtifacts: true
+
+      - name: Show scores
+        if: always()
+        run: .github/scripts/lighthouse-summary.sh "Scores (1 run per page)" >> "$GITHUB_STEP_SUMMARY"
+
+      - name: List failed pages
+        id: failed
+        if: steps.single-run.outcome == 'failure'
+        run: |
+          {
+            echo "urls<<EOF"
+            jq -r '[.[] | select(.level == "error") | .url] | unique | .[]' .lighthouseci/assertion-results.json 2>/dev/null || true
+            echo "EOF"
+          } >> "$GITHUB_OUTPUT"
+
+      # If no failed pages could be read, urls is empty and every page in
+      # lighthouserc.json is retried.
+      - uses: treosh/lighthouse-ci-action@v12
+        if: steps.single-run.outcome == 'failure'
+        with:
+          configPath: ./lighthouserc.json
+          urls: ${{ steps.failed.outputs.urls }}
+          runs: 3
+          uploadArtifacts: true
+          artifactName: lighthouse-results-retry
+
+      - name: Show retry scores
+        if: always() && steps.single-run.outcome == 'failure'
+        run: .github/scripts/lighthouse-summary.sh "Retry scores (failed pages, 3 runs each)" >> "$GITHUB_STEP_SUMMARY"
