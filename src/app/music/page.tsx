@@ -138,7 +138,11 @@ export default function MusicPage() {
               <p className="mb-2 text-sm text-muted">
                 {release.title} · {release.type} · {release.year}
               </p>
-              <SpotifyEmbed id={release.spotifyId} title={release.title} />
+              <SpotifyEmbed
+                id={release.spotifyId}
+                title={release.title}
+                highlight={release.latest}
+              />
             </li>
           ))}
         </ul>

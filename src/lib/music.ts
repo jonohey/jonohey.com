@@ -35,10 +35,14 @@ export type Release = {
   type: "Album" | "EP" | "Single";
   year: number;
   spotifyId: string;
+  // Renders the embed in Spotify's default (coloured) theme instead of black.
+  // Only the newest release should have this.
+  latest?: boolean;
 };
 
 // Newest first. IDs are Spotify album IDs (open.spotify.com/album/<id>).
 export const releases: Release[] = [
+  { title: "After the Practice", type: "Single", year: 2026, spotifyId: "2ynprhSHVBFBYIMIkzgKU9", latest: true },
   { title: "I Belong", type: "Single", year: 2026, spotifyId: "71cc1moGqj4mx2a80R5In6" },
   { title: "The Space Between", type: "Single", year: 2026, spotifyId: "569iMRcuBw4kNexgmdCw8y" },
   { title: "Foundling (Reprise)", type: "Single", year: 2026, spotifyId: "2BciIeBDGtRL3dQVqmCjSH" },
