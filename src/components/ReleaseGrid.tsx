@@ -126,15 +126,15 @@ export function ReleaseGrid({ items }: { items: ReleaseWithCover[] }) {
         className="fixed inset-0 m-0 h-dvh max-h-none w-dvw max-w-none cursor-zoom-out bg-ink p-0 outline-none! text-paper backdrop:bg-transparent"
       >
         {selected && (
-          <div className="flex h-full flex-col items-center justify-center gap-4 p-4 sm:p-8">
+          <div className="flex h-full flex-col items-center justify-center gap-4 sm:p-8">
             <Image
               src={selected.cover.image}
               alt={`Cover artwork for ${selected.release.title} by Jono Hey`}
               quality={90}
               sizes="(min-width: 640px) 85vh, 100vw"
-              className="aspect-square max-h-[80dvh] w-auto max-w-full cursor-default object-contain"
+              className="aspect-square max-h-[80dvh] w-full cursor-default object-contain sm:w-auto sm:max-w-full"
             />
-            <p className="text-center text-sm text-muted">
+            <p className="px-4 text-center text-sm text-muted">
               {selected.release.title} · {selected.cover.location}
             </p>
             <PurchaseLinks {...selected} />
