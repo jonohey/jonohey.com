@@ -16,9 +16,8 @@ pnpm dev
 
 ## Lighthouse
 
-Pull requests run Lighthouse (performance, accessibility, SEO, best practices) against a production build via `.github/workflows/lighthouse.yml`. Pages and score thresholds are in `lighthouserc.json`. To run it locally:
+Pull requests run Lighthouse (performance, accessibility, SEO, best practices) against a production build via `.github/workflows/lighthouse.yml`. Pages and score thresholds are in `lighthouserc.json`. To run it locally (it builds and starts the site itself):
 
 ```bash
-pnpm build && pnpm start
 npx @lhci/cli autorun
 ```
