@@ -13,3 +13,12 @@ pnpm dev
 - `public/sheet-music/` — old free sheet music PDFs, kept so existing links still work.
 - `next.config.ts` — redirects (`/zoom`, `/books`).
 - Social images: `src/app/opengraph-image.jpg` (site default) and `src/app/music/opengraph-image.tsx` (generated).
+
+## Lighthouse
+
+Pull requests run Lighthouse (performance, accessibility, SEO, best practices) against a production build via `.github/workflows/lighthouse.yml`. Pages and score thresholds are in `lighthouserc.json`. To run it locally:
+
+```bash
+pnpm build && pnpm start
+npx @lhci/cli autorun
+```
