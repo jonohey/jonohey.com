@@ -24,6 +24,21 @@ jobs:
 
       - run: pnpm install --frozen-lockfile
 
+      - run: pnpm build
+
+      # Start the server ourselves and request every page once so Lighthouse
+      # measures a warm server, not the cold first hit.
+      - name: Start and warm up the server
+        run: |
+          nohup pnpm start > server.log 2>&1 &
+          for i in $(seq 1 60); do
+            curl -fs http://localhost:3000/ > /dev/null && break
+            sleep 1
+          done
+          for path in / /music /research /bibliography /contact; do
+            curl -fs "http://localhost:3000$path" > /dev/null
+          done
+
       # One run per page is usually enough. Scores are noisy on shared
       # runners, so pages that fail are retried with more runs (the best run counts).
       - uses: treosh/lighthouse-ci-action@v12

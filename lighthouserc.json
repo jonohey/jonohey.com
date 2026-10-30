@@ -1,9 +1,6 @@
 {
   "ci": {
     "collect": {
-      "startServerCommand": "pnpm build && pnpm start",
-      "startServerReadyPattern": "Ready in",
-      "startServerReadyTimeout": 180000,
       "url": [
         "http://localhost:3000/",
         "http://localhost:3000/music",
