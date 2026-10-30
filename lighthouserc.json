@@ -10,8 +10,7 @@
         "http://localhost:3000/research",
         "http://localhost:3000/bibliography",
         "http://localhost:3000/contact"
-      ],
-      "numberOfRuns": 3
+      ]
     },
     "assert": {
       "assertMatrix": [

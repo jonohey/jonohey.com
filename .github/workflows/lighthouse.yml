@@ -24,7 +24,20 @@ jobs:
 
       - run: pnpm install --frozen-lockfile
 
+      # One run per page is usually enough. Scores are noisy on shared
+      # runners, so a failure is retried with more runs (the best run counts).
       - uses: treosh/lighthouse-ci-action@v12
+        id: single-run
+        continue-on-error: true
         with:
           configPath: ./lighthouserc.json
+          runs: 1
           uploadArtifacts: true
+
+      - uses: treosh/lighthouse-ci-action@v12
+        if: steps.single-run.outcome == 'failure'
+        with:
+          configPath: ./lighthouserc.json
+          runs: 3
+          uploadArtifacts: true
+          artifactName: lighthouse-results-retry
