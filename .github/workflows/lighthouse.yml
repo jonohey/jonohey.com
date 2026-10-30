@@ -49,6 +49,10 @@ jobs:
           runs: 1
           uploadArtifacts: true
 
+      - name: Show scores
+        if: always()
+        run: .github/scripts/lighthouse-summary.sh "Scores (1 run per page)" >> "$GITHUB_STEP_SUMMARY"
+
       - name: List failed pages
         id: failed
         if: steps.single-run.outcome == 'failure'
@@ -69,3 +73,7 @@ jobs:
           runs: 3
           uploadArtifacts: true
           artifactName: lighthouse-results-retry
+
+      - name: Show retry scores
+        if: always() && steps.single-run.outcome == 'failure'
+        run: .github/scripts/lighthouse-summary.sh "Retry scores (failed pages, 3 runs each)" >> "$GITHUB_STEP_SUMMARY"
