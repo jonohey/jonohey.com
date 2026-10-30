@@ -2,7 +2,9 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { Eyebrow } from "@/components/Eyebrow";
 import { JsonLd } from "@/components/JsonLd";
+import { ReleaseGrid } from "@/components/ReleaseGrid";
 import { SpotifyEmbed } from "@/components/SpotifyEmbed";
+import { coverArt } from "@/lib/cover-art";
 import {
   latestReleasesPlaylist,
   releases,
@@ -44,6 +46,7 @@ const musicJsonLd = {
           ? "https://schema.org/EPRelease"
           : "https://schema.org/AlbumRelease",
     url: `https://open.spotify.com/album/${release.spotifyId}`,
+    image: `${siteUrl}${coverArt[release.spotifyId].image.src}`,
   })),
 };
 
@@ -132,20 +135,15 @@ export default function MusicPage() {
 
       <section className="mt-20">
         <SectionHeading eyebrow="Discography" title="Releases" />
-        <ul className="grid gap-6 md:grid-cols-2">
-          {releases.map((release) => (
-            <li key={release.spotifyId}>
-              <p className="mb-2 text-sm text-muted">
-                {release.title} · {release.type} · {release.year}
-              </p>
-              <SpotifyEmbed
-                id={release.spotifyId}
-                title={release.title}
-                highlight={release.latest}
-              />
-            </li>
-          ))}
-        </ul>
+        <ReleaseGrid
+          items={releases.map((release) => ({
+            release,
+            cover: coverArt[release.spotifyId],
+          }))}
+        />
+        <p className="mt-10 text-sm text-muted">
+          All album covers are original compositions and photography by me.
+        </p>
       </section>
 
       <section className="mt-20 max-w-2xl">

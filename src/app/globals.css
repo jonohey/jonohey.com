@@ -19,6 +19,10 @@ html {
   color-scheme: dark;
 }
 
+html:has(dialog[open]) {
+  overflow: hidden;
+}
+
 body {
   background: var(--color-ink);
   color: var(--color-paper);
