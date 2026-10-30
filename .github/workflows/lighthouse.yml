@@ -39,6 +39,14 @@ jobs:
             curl -fs "http://localhost:3000$path" > /dev/null
           done
 
+      # Throwaway run, discarded: the first Lighthouse run in a job is slow
+      # (cold Chrome on a busy runner) and would otherwise hit the homepage.
+      - name: Warm up Lighthouse
+        uses: treosh/lighthouse-ci-action@v12
+        with:
+          urls: http://localhost:3000/
+          runs: 1
+
       # One run per page is usually enough. Scores are noisy on shared
       # runners, so pages that fail are retried with more runs (the best run counts).
       - uses: treosh/lighthouse-ci-action@v12
