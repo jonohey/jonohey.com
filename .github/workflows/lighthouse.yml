@@ -25,7 +25,7 @@ jobs:
       - run: pnpm install --frozen-lockfile
 
       # One run per page is usually enough. Scores are noisy on shared
-      # runners, so a failure is retried with more runs (the best run counts).
+      # runners, so pages that fail are retried with more runs (the best run counts).
       - uses: treosh/lighthouse-ci-action@v12
         id: single-run
         continue-on-error: true
@@ -34,10 +34,23 @@ jobs:
           runs: 1
           uploadArtifacts: true
 
+      - name: List failed pages
+        id: failed
+        if: steps.single-run.outcome == 'failure'
+        run: |
+          {
+            echo "urls<<EOF"
+            jq -r '[.[] | select(.level == "error") | .url] | unique | .[]' .lighthouseci/assertion-results.json 2>/dev/null || true
+            echo "EOF"
+          } >> "$GITHUB_OUTPUT"
+
+      # If no failed pages could be read, urls is empty and every page in
+      # lighthouserc.json is retried.
       - uses: treosh/lighthouse-ci-action@v12
         if: steps.single-run.outcome == 'failure'
         with:
           configPath: ./lighthouserc.json
+          urls: ${{ steps.failed.outputs.urls }}
           runs: 3
           uploadArtifacts: true
           artifactName: lighthouse-results-retry
