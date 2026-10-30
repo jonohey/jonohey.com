@@ -8,6 +8,10 @@ This block is written and re-added by `next dev` — verify at `node_modules/nex
 
 <!-- END:nextjs-agent-rules -->
 
+## Before opening a PR
+
+Follow `docs/pre-pr-checklist.md` first: lint/build, accessibility, performance, security, SEO, mobile-first styling, no unused code or CSS bloat, and reuse of existing patterns.
+
 ## Adding a music release
 
 Add the new entry at the top of `releases` in `src/lib/music.ts` (newest first, Spotify album ID). Give it `latest: true` so its embed uses Spotify's coloured theme, and remove `latest` from the previous release so only one embed is highlighted.
