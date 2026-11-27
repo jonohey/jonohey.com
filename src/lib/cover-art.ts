@@ -6,6 +6,7 @@ import deepDown from "../../public/images/covers/deep-down-and-not-forgotten.jpg
 import foundling from "../../public/images/covers/foundling-reprise.jpg";
 import freshStart from "../../public/images/covers/fresh-start.jpg";
 import iBelong from "../../public/images/covers/i-belong.jpg";
+import liftingMeUp from "../../public/images/covers/lifting-me-up.jpg";
 import outro from "../../public/images/covers/outro.jpg";
 import spaceBetween from "../../public/images/covers/the-space-between.jpg";
 
@@ -21,6 +22,10 @@ export type CoverArt = {
 
 // Keyed by the release's spotifyId (see `releases` in music.ts).
 export const coverArt: Record<string, CoverArt> = {
+  "58jxeeWcBT0SkpYaosRrt6": {
+    image: liftingMeUp,
+    location: "Mt Rainier rising over Seattle",
+  },
   "1nE57DcoCozher3qu0nXYJ": {
     image: ameliasDance,
     location: "Mt Rainier rising over Seattle",
